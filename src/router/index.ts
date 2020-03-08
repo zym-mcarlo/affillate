@@ -7,6 +7,9 @@ import Login from '../views/Login.vue'
 import SubmitSuccess from '../views/SubmitSuccess.vue'
 
 import ContentModule from '../views/ContentModule.vue'
+import HomeCampaign from '../views/HomeCampaign.vue'
+import Report from '../views/Report.vue'
+import TransactionRecord from '../views/TransactionRecord.vue'
 
 Vue.use(VueRouter)
 
@@ -42,12 +45,31 @@ const routes = [
     path: '/content',
     name: 'content',
     component: ContentModule,
-    childrens: [
+    children: [
+      {
+        path: 'homeCampaign',
+        name: 'homeCampaign',
+        component: HomeCampaign
+      },
+      {
+        path: 'report',
+        name: 'report',
+        component: Report
+      },
+      {
+        path: 'transactionRecord',
+        name: 'transactionRecord',
+        component: TransactionRecord
+      }
     ]
   },
   {
     path: '/',
     redirect: '/index/signIn'
+  },
+  {
+    path: '/content',
+    redirect: '/content/HomeCampaign'
   }
 ]
 

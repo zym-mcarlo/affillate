@@ -32,7 +32,12 @@
         </div>
       </div>
       <div class="button-container">
-        <button class="common-button" :class="{'disabled': true}">Submit</button>
+        <button
+          class="common-button"
+          :class="{'disabled': false}"
+          :disabled="false"
+          @click="$router.push({name: 'homeCampaign'})"
+        >Submit</button>
       </div>
     </div>
   </section>
